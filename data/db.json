@@ -1,0 +1,938 @@
+{
+  "adminUsers": [
+    {
+      "id": "admin-1",
+      "username": "admin@sarder",
+      "email": "admin@sardergallery.com",
+      "fullName": "Sarder Gallery Administrator",
+      "role": "super_admin",
+      "passwordHash": "9fe35ce543ad2b7eb987ef3f7ed24536:d312d763b1d7252bc8af21f4374c832c4b2b750878787fe89696877b4763303eaf5be4a163664c5880336ca03b3e46e8f3acb1afa10c06725c5b480723f012b3",
+      "mustChangePassword": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "lastLogin": "2026-10-18T07:15:49.378Z"
+    }
+  ],
+  "customers": [],
+  "products": [
+    {
+      "id": "prod-1",
+      "nameBn": "প্রিমিয়াম ইলেকট্রিক বেবি রকার উইথ ব্লুটুথ ও মিউজিক",
+      "nameEn": "Premium Electric Baby Rocker with Bluetooth & Music",
+      "slug": "premium-electric-baby-rocker-bluetooth",
+      "sku": "SG-RCK-001",
+      "categoryId": "cat-rockers",
+      "shortDescBn": "স্মার্ট ব্লুটুথ মিউজিক, ৫টি সুইং স্পিড ও রিমোট কন্ট্রোল সুবিধাযুক্ত প্রিমিয়াম রকার।",
+      "shortDescEn": "Smart Bluetooth music, 5 swing speeds and remote-controlled luxury rocker.",
+      "fullDescBn": "সরদার গ্যালারির এই প্রিমিয়াম ইলেকট্রিক বেবি রকার নবজাতক থেকে শুরু করে ১২ মাস বয়সের শিশুদের জন্য অত্যন্ত উপযোগী। এতে রয়েছে নরম আরামদায়ক কুশন, সুরক্ষামূলক ৫-পয়েন্ট সেফটি বেল্ট, বিল্ট-ইন সফট লোলাবাই মিউজিক এবং ব্লুটুথ সংযোগ যার মাধ্যমে যেকোনো গান বাজানো যায়। ৩টি টাইমার মোড ও ৫টি ভিন্ন গতিতে দুলতে পারে। অ্যালুমিনিয়াম অ্যালয় মজবুত বডি দীর্ঘস্থায়ী ও নিরাপদ।",
+      "price": 6500,
+      "salePrice": 5490,
+      "costPrice": 4200,
+      "stock": 18,
+      "images": [
+        "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+      "variants": [
+        {
+          "id": "v1",
+          "name": "Soft Gray (ধূসর)",
+          "sku": "SG-RCK-001-GRY",
+          "price": 5490,
+          "stock": 10,
+          "attributes": {
+            "Color": "Soft Gray"
+          }
+        },
+        {
+          "id": "v2",
+          "name": "Pastel Pink (গোলাপী)",
+          "sku": "SG-RCK-001-PNK",
+          "price": 5490,
+          "stock": 8,
+          "attributes": {
+            "Color": "Pastel Pink"
+          }
+        }
+      ],
+      "dimensions": "65cm x 60cm x 52cm",
+      "weight": "4.2 kg",
+      "specifications": {
+        "উপাদান": "অ্যালুমিনিয়াম ফ্রেম + অ্যান্টি-অ্যালার্জিক ফেব্রিক",
+        "উপযুক্ত বয়স": "০ থেকে ১৮ মাস",
+        "সর্বোচ্চ ওজন ধারণ ক্ষমতা": "১৫ কেজি",
+        "পাওয়ার সোর্স": "সরাসরি অ্যাডাপ্টার / ব্যাটারি চালিত"
+      },
+      "ageGroup": "0-18 Months",
+      "careInstructions": "ফেব্রিক কভার সহজে খুলে ওয়াশিং মেশিনে বা হাতে ধোয়া যায়। ফ্রেম ভেজা নরম কাপড় দিয়ে মুছে নিন।",
+      "safetyInfo": "শিশুকে বসানোর সময় অবশ্যই ৫-পয়েন্ট সেফটি হারনেস আটকে দিন। কোনো উঁচু টেবিলের উপর রাখবেন না।",
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "isPublished": true,
+      "seoTitle": "প্রিমিয়াম ইলেকট্রিক বেবি রকার | Sarder Gallery Bangladesh",
+      "seoDescription": "কিনুন প্রিমিয়াম ইলেকট্রিক বেবি রকার মিউজিক ও ব্লুটুথ সহ। সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।",
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    },
+    {
+      "id": "prod-2",
+      "nameBn": "স্মার্ট ফোল্ডেবল বেবি ক্র্যাডল ও অটোমেটিক সুইং দোলনা",
+      "nameEn": "Smart Foldable Baby Cradle & Automatic Swing",
+      "slug": "smart-foldable-baby-cradle-automatic-swing",
+      "sku": "SG-SWG-002",
+      "categoryId": "cat-swings",
+      "shortDescBn": "মশারিসহ সহজে ভাঁজযোগ্য প্রিমিয়াম অটোমেটিক বেবি দোলনা। শান্ত ঘুম নিশ্চিত করে।",
+      "shortDescEn": "Foldable baby cradle swing with mosquito net and soft rocking action.",
+      "fullDescBn": "শিশুর নির্ভার ঘুমের জন্য এই স্মার্ট দোলনাটি অন্যতম সেরা পছন্দ। সহজে ভাঁজ করে ঘরের যেকোনো জায়গায় রাখা যায় এবং ভ্রমণের সময় সাথে নেওয়া সম্ভব। পুরো শরীর কভার করা শ্বাস-প্রশ্বাসযোগ্য মশারির নেট শিশুকে মশা-মাছি থেকে সুরক্ষিত রাখে। শান্ত মিষ্টি সুর শিশুর ঘুম দ্রুত এনে দেয়।",
+      "price": 5200,
+      "salePrice": 4350,
+      "costPrice": 3400,
+      "stock": 14,
+      "images": [
+        "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=800&q=80",
+      "variants": [
+        {
+          "id": "v3",
+          "name": "Sky Blue (আকাশি)",
+          "sku": "SG-SWG-002-BLU",
+          "price": 4350,
+          "stock": 7,
+          "attributes": {
+            "Color": "Sky Blue"
+          }
+        },
+        {
+          "id": "v4",
+          "name": "Cream Beige (ক্রিম)",
+          "sku": "SG-SWG-002-CRM",
+          "price": 4350,
+          "stock": 7,
+          "attributes": {
+            "Color": "Cream Beige"
+          }
+        }
+      ],
+      "dimensions": "88cm x 50cm x 75cm",
+      "weight": "5.5 kg",
+      "specifications": {
+        "উপাদান": "কার্বন স্টিল পাইপ + নরম শ্বাসযোগ্য কটন",
+        "উপযুক্ত বয়স": "০ থেকে ১২ মাস",
+        "ওজন বহন ক্ষমতা": "১২ কেজি"
+      },
+      "ageGroup": "0-12 Months",
+      "safetyInfo": "মৃদু দোল শিশুর মস্তিষ্কের জন্য পুরোপুরি নিরাপদ ও আন্তর্জাতিক মানসম্মত।",
+      "isFeatured": true,
+      "isNewArrival": false,
+      "isBestSeller": true,
+      "isPublished": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    },
+    {
+      "id": "prod-3",
+      "nameBn": "কিউট এনিমেল বেবি প্লাশ সোফা ও সিটিং ট্রেইনার চেয়ার",
+      "nameEn": "Cute Animal Baby Plush Sofa & Sitting Support Chair",
+      "slug": "cute-animal-baby-plush-sofa-sitting-support",
+      "sku": "SG-SOF-003",
+      "categoryId": "cat-sofas",
+      "shortDescBn": "শিশুকে সোজা হয়ে বসতে শেখানোর জন্য নরম ও দৃষ্টিনন্দন অ্যান্টি-স্লিপ প্লাশ সোফা।",
+      "shortDescEn": "Ergonomic plush sitting support sofa for training infants to sit upright.",
+      "fullDescBn": "বাচ্চাদের ৪ থেকে ১৮ মাস বয়সে মেরুদণ্ডে সাপোর্ট দিয়ে সোজা হয়ে বসতে সাহায্য করে এই চমৎকার বেবি সোফা। উচ্চমানের সফট পিপি কটন ভর্তি থাকায় শিশু পড়ে গিয়ে আঘাত পাওয়ার কোনো ভয় নেই। নিচে অ্যান্টি-স্লিপ গ্রিপ রয়েছে যা মেঝেতে পিছলে যায় না। বিভিন্ন আকর্ষণীয় কার্টুন ডিজাইনে পাওয়া যাচ্ছে।",
+      "price": 2100,
+      "salePrice": 1650,
+      "costPrice": 1100,
+      "stock": 25,
+      "images": [
+        "https://images.unsplash.com/photo-1584839446487-142fd57e1b52?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1584839446487-142fd57e1b52?auto=format&fit=crop&w=800&q=80",
+      "variants": [
+        {
+          "id": "v5",
+          "name": "Friendly Bear Brown (ভালুক ব্রাউন)",
+          "sku": "SG-SOF-003-BRN",
+          "price": 1650,
+          "stock": 12,
+          "attributes": {
+            "Design": "Bear"
+          }
+        },
+        {
+          "id": "v6",
+          "name": "Cute Bunny Pink (খরগোশ গোলাপী)",
+          "sku": "SG-SOF-003-PNK",
+          "price": 1650,
+          "stock": 13,
+          "attributes": {
+            "Design": "Bunny"
+          }
+        }
+      ],
+      "dimensions": "50cm x 50cm x 40cm",
+      "weight": "1.8 kg",
+      "specifications": {
+        "বাহ্যিক কভার": "আল্ট্রা-সফট ভেলভেট প্লাশ",
+        "ভিতরের ফিলিং": "১০০% পিওর হোয়াইট পিপি কটন",
+        "উপযুক্ত বয়স": "৪ থেকে ১৮ মাস"
+      },
+      "ageGroup": "4-18 Months",
+      "careInstructions": "সহজে জিপার খুলে বাইরের কভার ওয়াশ করা যায়।",
+      "isFeatured": true,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "isPublished": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    },
+    {
+      "id": "prod-4",
+      "nameBn": "অর্থোপেডিক নিউবর্ন বেবি নেস্ট বেড ও অ্যান্টি-মস্কিটো সেট",
+      "nameEn": "Orthopedic Newborn Baby Nest Bed with Mosquito Net",
+      "slug": "orthopedic-newborn-baby-nest-bed-mosquito-net",
+      "sku": "SG-BED-004",
+      "categoryId": "cat-beds",
+      "shortDescBn": "মায়ের গর্ভের মতো নিরাপদ অনুভূতি দিতে অর্থোপেডিক বেড ও মশারির পূর্ণাঙ্গ কম্বো।",
+      "shortDescEn": "Portable baby nest lounger with head-shaping pillow and full mesh net.",
+      "fullDescBn": "নবজাতক শিশুর মাথার সঠিক গঠনের জন্য এই সেটে রয়েছে অ্যান্টি-ফ্ল্যাট হেড মেমোরি ফোম পিলো। চারপাশে উঁচু নরম বর্ডার শিশুকে কোনোদিকে গড়িয়ে পড়তে দেয় না। খাঁটি সুতি কাপড়ে তৈরি হওয়ায় শিশুর কোমল ত্বকে কোনো র‍্যাশ বা অস্বস্তি হয় না। সম্পূর্ণ সেটটি বহন করা খুবই সহজ।",
+      "price": 2450,
+      "salePrice": 1890,
+      "costPrice": 1300,
+      "stock": 20,
+      "images": [
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80",
+      "dimensions": "85cm x 50cm",
+      "weight": "1.4 kg",
+      "specifications": {
+        "ফ্যাব্রিক": "১০০% অরগানিক কটন ও শ্বাসযোগ্য ফোম",
+        "প্যাকেজে অন্তর্ভুক্ত": "১টি বেড নেস্ট, ১টি শেপিং পিলো, ১টি ফুল মশারির কভার"
+      },
+      "ageGroup": "0-12 Months",
+      "isFeatured": true,
+      "isNewArrival": false,
+      "isBestSeller": false,
+      "isPublished": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    },
+    {
+      "id": "prod-5",
+      "nameBn": "ফুড-গ্রেড সিলিকন বেবি ফিডিং সেট (বাটি, চামচ ও বিব)",
+      "nameEn": "Complete Food-Grade Silicone Baby Feeding Set",
+      "slug": "food-grade-silicone-baby-feeding-set",
+      "sku": "SG-FED-005",
+      "categoryId": "cat-feeding",
+      "shortDescBn": "১০০% বিপিএ ফ্রি, নরম সিলিকনের বাটি, ফ্লেক্সিবল চামচ ও অ্যাডজাস্টেবল ক্যাচার বিব।",
+      "shortDescEn": "Safe BPA-free suction bowl, soft spoon, fork and waterproof pocket bib.",
+      "fullDescBn": "শিশুকে সহজে প্রথম শক্ত খাবার খাওয়ানোর জন্য এই ফিডিং সেটটি অত্যন্ত নিরাপদ। বাটির নিচে থাকা শক্তিশালী সাকশন বেজ টেবিলের সাথে শক্তভাবে আটকে থাকে, তাই শিশু উল্টে ফেলতে পারে না। চামচ ও কাঁটাচামচের নরম কোণা শিশুর সংবেদনশীল মাড়িতে কোনো ব্যথা দেয় না।",
+      "price": 1350,
+      "salePrice": 990,
+      "costPrice": 600,
+      "stock": 35,
+      "images": [
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80",
+      "specifications": {
+        "ম্যাটেরিয়াল": "১০০% ফুড গ্রেড সিলিকন (BPA & Phthalate Free)",
+        "তাপমাত্রা সহ্য ক্ষমতা": "-২০°C থেকে ২২০°C",
+        "ক্লিনিং": "ডিশওয়াশার ও গরম পানিতে ফুটানো নিরাপদ"
+      },
+      "ageGroup": "6-36 Months",
+      "isFeatured": false,
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "isPublished": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    },
+    {
+      "id": "prod-6",
+      "nameBn": "মন্টিসরি কাঠের সেন্সরি অ্যাক্টিভিটি ও শেপ সর্টার টয়",
+      "nameEn": "Montessori Wooden Sensory Activity & Shape Sorter Toy",
+      "slug": "montessori-wooden-sensory-activity-toy",
+      "sku": "SG-TOY-006",
+      "categoryId": "cat-toys",
+      "shortDescBn": "শিশুর বুদ্ধিমত্তা ও হাতের সমন্বয় বাড়াতে নিরাপদ পরিবেশবান্ধব কাঠের খেলনা।",
+      "shortDescEn": "Eco-friendly non-toxic natural wood learning and motor skills toy.",
+      "fullDescBn": "প্রাকৃতিক পাইন কাঠের মসৃণ ফিনিশিং এবং ওয়াটার-বেসড নন-টক্সিক কালার দিয়ে তৈরি এই শিক্ষণীয় খেলনা। শিশুর রঙ চেনা, আকৃতি মেলা এবং হাত ও চোখের সমন্বয় দ্রুত উন্নত করতে বিশ্বজুড়ে চিকিৎসকদের প্রশংসিত খেলনা।",
+      "price": 1450,
+      "salePrice": 1150,
+      "costPrice": 750,
+      "stock": 22,
+      "images": [
+        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800&q=80",
+      "specifications": {
+        "কাঠের ধরণ": "প্রাকৃতিক মসৃণ পাইনউড",
+        "রং": "শিশুদের জন্য নিরাপদ লেড-ফ্রি ওয়াটার কালার"
+      },
+      "ageGroup": "1-4 Years",
+      "isFeatured": false,
+      "isNewArrival": true,
+      "isBestSeller": false,
+      "isPublished": true,
+      "createdAt": "2026-10-17T11:21:05.856Z",
+      "updatedAt": "2026-10-17T11:21:05.856Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-rockers",
+      "nameBn": "বেবি রকার ও বাউন্সার",
+      "nameEn": "Baby Rockers & Bouncers",
+      "slug": "baby-rockers",
+      "descriptionBn": "শিশুর আরামদায়ক ঘুম ও খেলার জন্য অটোমেটিক এবং ম্যানুয়াল রকার",
+      "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80",
+      "icon": "RockingChair",
+      "displayOrder": 1,
+      "isActive": true
+    },
+    {
+      "id": "cat-swings",
+      "nameBn": "বেবি দোলনা ও ক্র্যাডল",
+      "nameEn": "Baby Swings & Cradles",
+      "slug": "baby-swings",
+      "descriptionBn": "মিউজিক এবং টাইমারসহ প্রিমিয়াম ইলেকট্রিক ও ম্যানুয়াল দোলনা",
+      "image": "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=600&q=80",
+      "icon": "Baby",
+      "displayOrder": 2,
+      "isActive": true
+    },
+    {
+      "id": "cat-sofas",
+      "nameBn": "বেবি সোফা ও সিটিং সাপোর্ট",
+      "nameEn": "Baby Sofas & Sitting Support",
+      "slug": "baby-sofas",
+      "descriptionBn": "শিশুর সঠিকভাবে বসা শেখার জন্য নরম ও আরামদায়ক প্লাশ সোফা",
+      "image": "https://images.unsplash.com/photo-1584839446487-142fd57e1b52?auto=format&fit=crop&w=600&q=80",
+      "icon": "Armchair",
+      "displayOrder": 3,
+      "isActive": true
+    },
+    {
+      "id": "cat-beds",
+      "nameBn": "বেবি বেড, ম্যাট্রেস ও পিলো",
+      "nameEn": "Baby Beds, Mattresses & Pillows",
+      "slug": "baby-beds",
+      "descriptionBn": "মশারিসহ সেফটি নেস্টেড বেবি বেড ও অ্যান্টি-ফ্ল্যাট হেড পিলো",
+      "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80",
+      "icon": "Bed",
+      "displayOrder": 4,
+      "isActive": true
+    },
+    {
+      "id": "cat-feeding",
+      "nameBn": "বেবি ফিডিং ও ফুড এক্সেসরিজ",
+      "nameEn": "Baby Feeding & Care",
+      "slug": "baby-feeding",
+      "descriptionBn": "বিপিএ মুক্ত ফুড গ্রেড সিলিকন ফিডিং সেট ও ওয়াটার কাপ",
+      "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80",
+      "icon": "Utensils",
+      "displayOrder": 5,
+      "isActive": true
+    },
+    {
+      "id": "cat-toys",
+      "nameBn": "খেলনা ও লার্নিং অ্যাক্টিভিটি",
+      "nameEn": "Baby Toys & Learning",
+      "slug": "baby-toys",
+      "descriptionBn": "মস্তিষ্কের বিকাশে সহায়ক নিরাপদ কাঠের ও নরম খেলনা",
+      "image": "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=600&q=80",
+      "icon": "Gamepad2",
+      "displayOrder": 6,
+      "isActive": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1792239387138-lxq8",
+      "orderNumber": "SG-2026-1004",
+      "customerName": "টেস্ট কাস্টমার",
+      "customerPhone": "01711223344",
+      "district": "Dhaka",
+      "address": "ধানমন্ডি, ঢাকা",
+      "paymentMethod": "cod",
+      "paymentStatus": "paid",
+      "fulfillmentStatus": "confirm",
+      "codStatus": "collected",
+      "items": [
+        {
+          "productId": "prod-1",
+          "nameBn": "প্রিমিয়াম ইলেকট্রিক বেবি রকার উইথ ব্লুটুথ ও মিউজিক",
+          "nameEn": "Premium Electric Baby Rocker with Bluetooth & Music",
+          "sku": "SG-RCK-001",
+          "price": 5490,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 10980
+        }
+      ],
+      "subtotal": 10980,
+      "discount": 350,
+      "couponCode": "SARDER10",
+      "deliveryFee": 0,
+      "total": 10630,
+      "statusHistory": [
+        {
+          "status": "pending_confirmation",
+          "timestamp": "2026-10-17T12:16:27.138Z",
+          "actor": "Customer (Online Checkout)",
+          "note": "অর্ডার সফলভাবে জমা দেওয়া হয়েছে। কনফার্মেশনের জন্য অপেক্ষমাণ।"
+        },
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-17T12:16:27.139Z",
+          "actor": "Admin",
+          "note": "Status changed from pending_confirmation to confirmed"
+        },
+        {
+          "status": "cancelled",
+          "timestamp": "2026-10-17T12:16:27.140Z",
+          "actor": "Admin",
+          "note": "Status changed from confirmed to cancelled"
+        },
+        {
+          "status": "phone_off",
+          "timestamp": "2026-10-18T07:15:49.395Z",
+          "actor": "admin@sarder",
+          "note": "Customer phone switched off at 2 PM call"
+        },
+        {
+          "status": "confirm",
+          "timestamp": "2026-10-18T07:15:49.399Z",
+          "actor": "admin@sarder",
+          "note": "Customer confirmed delivery for tomorrow"
+        }
+      ],
+      "createdAt": "2026-10-17T12:16:27.138Z",
+      "updatedAt": "2026-10-18T07:15:49.399Z"
+    },
+    {
+      "id": "ord-1792239372855-l7ms",
+      "orderNumber": "SG-2026-1003",
+      "customerName": "টেস্ট কাস্টমার",
+      "customerPhone": "01711223344",
+      "district": "Dhaka",
+      "address": "ধানমন্ডি, ঢাকা",
+      "paymentMethod": "cod",
+      "paymentStatus": "paid",
+      "fulfillmentStatus": "cancelled",
+      "codStatus": "collected",
+      "items": [
+        {
+          "productId": "prod-1",
+          "nameBn": "প্রিমিয়াম ইলেকট্রিক বেবি রকার উইথ ব্লুটুথ ও মিউজিক",
+          "nameEn": "Premium Electric Baby Rocker with Bluetooth & Music",
+          "sku": "SG-RCK-001",
+          "price": 5490,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 10980
+        }
+      ],
+      "subtotal": 10980,
+      "discount": 350,
+      "couponCode": "SARDER10",
+      "deliveryFee": 0,
+      "total": 10630,
+      "statusHistory": [
+        {
+          "status": "pending_confirmation",
+          "timestamp": "2026-10-17T12:16:12.855Z",
+          "actor": "Customer (Online Checkout)",
+          "note": "অর্ডার সফলভাবে জমা দেওয়া হয়েছে। কনফার্মেশনের জন্য অপেক্ষমাণ।"
+        },
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-17T12:16:12.856Z",
+          "actor": "Admin",
+          "note": "Status changed from pending_confirmation to confirmed"
+        },
+        {
+          "status": "cancelled",
+          "timestamp": "2026-10-17T12:16:12.857Z",
+          "actor": "Admin",
+          "note": "Status changed from confirmed to cancelled"
+        }
+      ],
+      "createdAt": "2026-10-17T12:16:12.855Z",
+      "updatedAt": "2026-10-17T12:16:12.858Z"
+    },
+    {
+      "id": "ord-1792239353014-fmz7",
+      "orderNumber": "SG-2026-1002",
+      "customerName": "টেস্ট কাস্টমার",
+      "customerPhone": "01711223344",
+      "district": "Dhaka",
+      "address": "ধানমন্ডি, ঢাকা",
+      "paymentMethod": "cod",
+      "paymentStatus": "paid",
+      "fulfillmentStatus": "cancelled",
+      "codStatus": "collected",
+      "items": [
+        {
+          "productId": "prod-1",
+          "nameBn": "প্রিমিয়াম ইলেকট্রিক বেবি রকার উইথ ব্লুটুথ ও মিউজিক",
+          "nameEn": "Premium Electric Baby Rocker with Bluetooth & Music",
+          "sku": "SG-RCK-001",
+          "price": 5490,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 10980
+        }
+      ],
+      "subtotal": 10980,
+      "discount": 350,
+      "couponCode": "SARDER10",
+      "deliveryFee": 0,
+      "total": 10630,
+      "statusHistory": [
+        {
+          "status": "pending_confirmation",
+          "timestamp": "2026-10-17T12:15:53.014Z",
+          "actor": "Customer (Online Checkout)",
+          "note": "অর্ডার সফলভাবে জমা দেওয়া হয়েছে। কনফার্মেশনের জন্য অপেক্ষমাণ।"
+        },
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-17T12:15:53.015Z",
+          "actor": "Admin",
+          "note": "Status changed from pending_confirmation to confirmed"
+        },
+        {
+          "status": "cancelled",
+          "timestamp": "2026-10-17T12:15:53.016Z",
+          "actor": "Admin",
+          "note": "Status changed from confirmed to cancelled"
+        }
+      ],
+      "createdAt": "2026-10-17T12:15:53.014Z",
+      "updatedAt": "2026-10-17T12:15:53.017Z"
+    },
+    {
+      "id": "ord-1792236066109-zsxd",
+      "orderNumber": "SG-2026-1001",
+      "customerName": "টেস্ট কাস্টমার",
+      "customerPhone": "01711223344",
+      "district": "Dhaka",
+      "address": "ধানমন্ডি, ঢাকা",
+      "paymentMethod": "cod",
+      "paymentStatus": "paid",
+      "fulfillmentStatus": "cancelled",
+      "codStatus": "collected",
+      "items": [
+        {
+          "productId": "prod-1",
+          "nameBn": "প্রিমিয়াম ইলেকট্রিক বেবি রকার উইথ ব্লুটুথ ও মিউজিক",
+          "nameEn": "Premium Electric Baby Rocker with Bluetooth & Music",
+          "sku": "SG-RCK-001",
+          "price": 5490,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+          "subtotal": 10980
+        }
+      ],
+      "subtotal": 10980,
+      "discount": 350,
+      "couponCode": "SARDER10",
+      "deliveryFee": 0,
+      "total": 10630,
+      "statusHistory": [
+        {
+          "status": "pending_confirmation",
+          "timestamp": "2026-10-17T11:21:06.109Z",
+          "actor": "Customer (Online Checkout)",
+          "note": "অর্ডার সফলভাবে জমা দেওয়া হয়েছে। কনফার্মেশনের জন্য অপেক্ষমাণ।"
+        },
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-17T11:21:06.110Z",
+          "actor": "Admin",
+          "note": "Status changed from pending_confirmation to confirmed"
+        },
+        {
+          "status": "cancelled",
+          "timestamp": "2026-10-17T11:21:06.111Z",
+          "actor": "Admin",
+          "note": "Status changed from confirmed to cancelled"
+        }
+      ],
+      "createdAt": "2026-10-17T11:21:06.109Z",
+      "updatedAt": "2026-10-17T11:21:06.112Z"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "cp-1",
+      "code": "SARDER10",
+      "discountType": "percent",
+      "discountValue": 10,
+      "minOrderValue": 1000,
+      "maxDiscount": 350,
+      "usageLimit": 500,
+      "usedCount": 18,
+      "startDate": "2026-01-01T00:00:00.000Z",
+      "endDate": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    },
+    {
+      "id": "cp-2",
+      "code": "BABYJOY",
+      "discountType": "fixed",
+      "discountValue": 200,
+      "minOrderValue": 1500,
+      "usageLimit": 300,
+      "usedCount": 22,
+      "startDate": "2026-01-01T00:00:00.000Z",
+      "endDate": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    },
+    {
+      "id": "cp-3",
+      "code": "FREESHIP",
+      "discountType": "free_shipping",
+      "discountValue": 0,
+      "minOrderValue": 1800,
+      "usageLimit": 200,
+      "usedCount": 31,
+      "startDate": "2026-01-01T00:00:00.000Z",
+      "endDate": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    }
+  ],
+  "deliveryZones": [
+    {
+      "id": "zone-dhaka",
+      "nameBn": "ঢাকার ভেতরে (Inside Dhaka)",
+      "nameEn": "Inside Dhaka",
+      "districts": [
+        "Dhaka",
+        "ঢাকা"
+      ],
+      "baseFee": 70,
+      "freeDeliveryThreshold": 2500,
+      "estimatedDeliveryDays": "২৪ - ৪৮ ঘণ্টার মধ্যে",
+      "codAvailable": true,
+      "bulkyProductFee": 50
+    },
+    {
+      "id": "zone-outside",
+      "nameBn": "ঢাকার বাইরে (Outside Dhaka)",
+      "nameEn": "Outside Dhaka",
+      "districts": [
+        "Chittagong",
+        "Sylhet",
+        "Rajshahi",
+        "Khulna",
+        "Barisal",
+        "Rangpur",
+        "Mymensingh",
+        "Comilla",
+        "Gazipur",
+        "Narayanganj",
+        "All Other Districts"
+      ],
+      "baseFee": 130,
+      "freeDeliveryThreshold": 2500,
+      "estimatedDeliveryDays": "২ - ৩ কার্যদিবসের মধ্যে",
+      "codAvailable": true,
+      "bulkyProductFee": 80
+    }
+  ],
+  "banners": [
+    {
+      "id": "ban-1",
+      "titleBn": "আপনার সোনামণির প্রশান্তিময় ঘুম ও আনন্দময় শৈশব",
+      "subtitleBn": "অটোমেটিক ইলেকট্রিক বেবি রকার ও দোলনায় চলছে বিশেষ মূল্যছাড়! সারা বাংলাদেশে ফ্রি ডেলিভারি সুযোগ।",
+      "tagBn": "মেগা অফার ২০২৬",
+      "imageUrl": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80",
+      "linkUrl": "/products?category=baby-rockers",
+      "buttonTextBn": "এখনই কিনুন ৳৫,৪৯০",
+      "isActive": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "ban-2",
+      "titleBn": "বেবি সিটিং সোফা ও এরগনোমিক প্লাশ চেয়ার",
+      "subtitleBn": "শিশুর পিঠ ও মেরুদণ্ডের সুরক্ষায় চিকিৎসকদের পছন্দের সিটিং সাপোর্ট সোফা।",
+      "tagBn": "নতুন আগমন",
+      "imageUrl": "https://images.unsplash.com/photo-1584839446487-142fd57e1b52?auto=format&fit=crop&w=1200&q=80",
+      "linkUrl": "/products?category=baby-sofas",
+      "buttonTextBn": "সোফা কালেকশন দেখুন",
+      "isActive": true,
+      "sortOrder": 2
+    }
+  ],
+  "settings": {
+    "businessNameBn": "সরদার গ্যালারি",
+    "businessNameEn": "Sarder Gallery",
+    "logoUrl": "",
+    "faviconUrl": "",
+    "phone": "+8801700000000",
+    "whatsappNumber": "+8801700000000",
+    "contactEmail": "contact@sardergallery.com",
+    "addressBn": "হাউজ #১২, রোড #৪, ধানমন্ডি, ঢাকা - ১২০৫, বাংলাদেশ",
+    "facebookPageUrl": "https://facebook.com/sardergallery",
+    "instagramUrl": "https://instagram.com/sardergallery",
+    "youtubeUrl": "https://youtube.com",
+    "currency": "BDT",
+    "currencySymbol": "৳",
+    "deliveryInsideDhakaFee": 70,
+    "deliveryOutsideDhakaFee": 130,
+    "freeDeliveryThreshold": 2500,
+    "announcementTextBn": "🎉 শুভ সূচনা অফার! ২,৫০০ টাকার অর্ডারে সারা বাংলাদেশে ফ্রি ডেলিভারি! কুপন কোড: SARDER10 ব্যবহারে ১০% ডিসকাউন্ট!",
+    "announcementActive": true,
+    "paymentGateways": {
+      "cod": {
+        "enabled": true,
+        "descriptionBn": "পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন (ক্যাশ অন ডেলিভারি)"
+      },
+      "bkash": {
+        "enabled": false,
+        "merchantNumber": "",
+        "testMode": true
+      },
+      "nagad": {
+        "enabled": false,
+        "merchantNumber": "",
+        "testMode": true
+      },
+      "sslcommerz": {
+        "enabled": false,
+        "storeId": "",
+        "testMode": true
+      }
+    },
+    "courierSettings": {
+      "provider": "manual",
+      "pathaoApiKey": "",
+      "pathaoSecret": "",
+      "steadfastApiKey": "",
+      "steadfastSecret": "",
+      "redxToken": ""
+    },
+    "analytics": {
+      "metaPixelId": "",
+      "googleAnalyticsId": "",
+      "metaCapiEnabled": false
+    }
+  },
+  "auditLogs": [
+    {
+      "id": "log-1792307749399-moa6",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "admin@sarder",
+      "details": "Order SG-2026-1004 changed to confirm",
+      "timestamp": "2026-10-18T07:15:49.399Z"
+    },
+    {
+      "id": "log-1792307749395-ctg2",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "admin@sarder",
+      "details": "Order SG-2026-1004 changed to phone_off",
+      "timestamp": "2026-10-18T07:15:49.395Z"
+    },
+    {
+      "id": "log-1792307749379-b5n3",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "performedBy": "admin@sarder",
+      "details": "Admin logged in successfully",
+      "timestamp": "2026-10-18T07:15:49.379Z",
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "log-1792307741280-zju2",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "performedBy": "admin@sarder",
+      "details": "Admin logged in successfully",
+      "timestamp": "2026-10-18T07:15:41.280Z",
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "log-1792239387141-w3i9",
+      "action": "COD_RECONCILED",
+      "performedBy": "Accounts Manager",
+      "details": "Order SG-2026-1004 COD status marked as collected",
+      "timestamp": "2026-10-17T12:16:27.141Z"
+    },
+    {
+      "id": "log-1792239387140-y1ce",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1004 changed to cancelled",
+      "timestamp": "2026-10-17T12:16:27.140Z"
+    },
+    {
+      "id": "log-1792239387139-sjun",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1004 changed to confirmed",
+      "timestamp": "2026-10-17T12:16:27.139Z"
+    },
+    {
+      "id": "log-1792239387138-mqhi",
+      "action": "ORDER_CREATED",
+      "performedBy": "01711223344",
+      "details": "Order SG-2026-1004 placed for ৳10630",
+      "timestamp": "2026-10-17T12:16:27.138Z"
+    },
+    {
+      "id": "log-1792239372858-fjp2",
+      "action": "COD_RECONCILED",
+      "performedBy": "Accounts Manager",
+      "details": "Order SG-2026-1003 COD status marked as collected",
+      "timestamp": "2026-10-17T12:16:12.858Z"
+    },
+    {
+      "id": "log-1792239372857-ahb6",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1003 changed to cancelled",
+      "timestamp": "2026-10-17T12:16:12.857Z"
+    },
+    {
+      "id": "log-1792239372856-o2nu",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1003 changed to confirmed",
+      "timestamp": "2026-10-17T12:16:12.856Z"
+    },
+    {
+      "id": "log-1792239372855-upm4",
+      "action": "ORDER_CREATED",
+      "performedBy": "01711223344",
+      "details": "Order SG-2026-1003 placed for ৳10630",
+      "timestamp": "2026-10-17T12:16:12.855Z"
+    },
+    {
+      "id": "log-1792239353017-epai",
+      "action": "COD_RECONCILED",
+      "performedBy": "Accounts Manager",
+      "details": "Order SG-2026-1002 COD status marked as collected",
+      "timestamp": "2026-10-17T12:15:53.017Z"
+    },
+    {
+      "id": "log-1792239353016-c8iv",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1002 changed to cancelled",
+      "timestamp": "2026-10-17T12:15:53.016Z"
+    },
+    {
+      "id": "log-1792239353015-wz1n",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1002 changed to confirmed",
+      "timestamp": "2026-10-17T12:15:53.015Z"
+    },
+    {
+      "id": "log-1792239353015-i5jb",
+      "action": "ORDER_CREATED",
+      "performedBy": "01711223344",
+      "details": "Order SG-2026-1002 placed for ৳10630",
+      "timestamp": "2026-10-17T12:15:53.015Z"
+    },
+    {
+      "id": "log-1792239077833-a36z",
+      "action": "ADMIN_PASSWORD_CHANGED",
+      "performedBy": "admin@sarder",
+      "details": "Admin updated password securely.",
+      "timestamp": "2026-10-17T12:11:17.833Z"
+    },
+    {
+      "id": "log-1792239047659-oqsa",
+      "action": "ADMIN_LOGIN_SUCCESS",
+      "performedBy": "admin@sarder",
+      "details": "Admin logged in successfully",
+      "timestamp": "2026-10-17T12:10:47.659Z",
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "log-1792236066112-fppa",
+      "action": "COD_RECONCILED",
+      "performedBy": "Accounts Manager",
+      "details": "Order SG-2026-1001 COD status marked as collected",
+      "timestamp": "2026-10-17T11:21:06.112Z"
+    },
+    {
+      "id": "log-1792236066111-erd6",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1001 changed to cancelled",
+      "timestamp": "2026-10-17T11:21:06.111Z"
+    },
+    {
+      "id": "log-1792236066110-cs2s",
+      "action": "ORDER_STATUS_UPDATED",
+      "performedBy": "Admin",
+      "details": "Order SG-2026-1001 changed to confirmed",
+      "timestamp": "2026-10-17T11:21:06.110Z"
+    },
+    {
+      "id": "log-1792236066109-44vi",
+      "action": "ORDER_CREATED",
+      "performedBy": "01711223344",
+      "details": "Order SG-2026-1001 placed for ৳10630",
+      "timestamp": "2026-10-17T11:21:06.109Z"
+    },
+    {
+      "id": "log-1",
+      "action": "SYSTEM_BOOTSTRAP",
+      "performedBy": "System",
+      "details": "Initial admin account bootstrapped for admin@sarder with mandatory password reset flag.",
+      "timestamp": "2026-10-17T11:21:05.856Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "productId": "prod-1",
+      "customerName": "নুসরাত জাহান",
+      "rating": 5,
+      "comment": "রকারটি আসলেই দারুণ! মিউজিক সিস্টেম খুব মিষ্টি এবং ব্লুটুথ দিয়ে নিজের পছন্দের গজল ও লোলাবাই বাজানো যায়। আমার ৪ মাসের বাচ্চা খুব শান্তিতে ঘুমায়। ধন্যবাদ সরদার গ্যালারি!",
+      "isApproved": true,
+      "createdAt": "2026-10-14T11:21:05.856Z"
+    },
+    {
+      "id": "rev-2",
+      "productId": "prod-3",
+      "customerName": "তানভীর আহমেদ",
+      "rating": 5,
+      "comment": "সোফাটার কোয়ালিটি অনেক সফট আর কাপড় প্রিমিয়াম। বাচ্চা নিরাপদে বসতে পারে। ডেলিভারি ২ দিনের মধ্যে পেয়েছি।",
+      "isApproved": true,
+      "createdAt": "2026-10-12T11:21:05.856Z"
+    }
+  ],
+  "landingPages": [
+    {
+      "id": "lp-1",
+      "slug": "electric-baby-rocker",
+      "title": "প্রিমিয়াম ইলেকট্রিক বেবি রকার - স্পেশাল অফার",
+      "headlineBn": "আপনার সোনামণির জন্য সবচেয়ে নিরাপদ ও আধুনিক ইলেকট্রিক বেবি রকার!",
+      "subheadlineBn": "স্মার্ট ব্লুটুথ মিউজিক, ৫টি সুইং স্পিড ও রিমোট কন্ট্রোল সহ শিশুর শান্ত ও আরামদায়ক ঘুম নিশ্চিত করুন।",
+      "badgeTextBn": "মেগা অফার • সারা দেশে ফ্রি ডেলিভারি",
+      "productId": "prod-1",
+      "bannerImage": "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80",
+      "featuresBn": [
+        "স্মার্ট ব্লুটুথ সংযোগ - পছন্দের সুর ও গান বাজানোর সুবিধা",
+        "৫টি ভিন্ন গতিতে স্বয়ংক্রিয় দোলার কন্ট্রোল মোড",
+        "৫-পয়েন্ট সেফটি হারনেস - শিশুর সর্বোচ্চ নিরাপত্তা নিশ্চিত করে",
+        "অ্যালুমিনিয়াম অ্যালয় মজবুত স্ট্রাকচার ও নরম অ্যান্টি-অ্যালার্জিক ফেব্রিক",
+        "সহজে রিমোট কন্ট্রোল দিয়ে দূর থেকেই স্পিড ও মিউজিক নিয়ন্ত্রণ"
+      ],
+      "callToActionBn": "এখনই অর্ডার করুন • ক্যাশ অন ডেলিভারি",
+      "isActive": true,
+      "viewCount": 142,
+      "orderCount": 18,
+      "createdAt": "2026-10-18T07:15:07.269Z",
+      "updatedAt": "2026-10-18T07:15:07.269Z"
+    }
+  ]
+}

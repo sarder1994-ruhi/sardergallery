@@ -1,0 +1,6 @@
+{
+  "name": "Sarder Gallery - Baby Products Store",
+  "description": "Sarder Gallery (সরদার গ্যালারি) - বাংলাদেশের প্রিমিয়াম বেবি রকার, বেবি দোলনা, বেবি সোফা ও শিশুদের পণ্যের বিশ্বস্ত অনলাইন শপ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
