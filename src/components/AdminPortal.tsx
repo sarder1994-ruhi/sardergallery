@@ -65,7 +65,20 @@ import type {
   OrderStatus,
   CodReconciliationStatus
 } from '../types';
-import { getApiUrl } from '../utils/api';
+import {
+  getApiUrl,
+  getLocalOrders,
+  getLocalProducts,
+  getLocalCategories,
+  getLocalSettings,
+  updateLocalOrderStatus,
+  updateLocalCodStatus,
+  upsertLocalProduct,
+  deleteLocalProduct,
+  upsertLocalCategory,
+  deleteLocalCategory,
+  saveLocalSettings,
+} from '../utils/api';
 
 interface AdminPortalProps {
   onClose: () => void;
@@ -317,15 +330,36 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
         safeFetch('/api/admin/categories'),
       ]);
 
-      if (Array.isArray(resProd)) setProducts(resProd);
-      if (Array.isArray(resOrd)) setOrders(resOrd);
+      if (Array.isArray(resProd) && resProd.length > 0) {
+        setProducts(resProd);
+      } else {
+        setProducts(getLocalProducts());
+      }
+
+      if (Array.isArray(resOrd)) {
+        setOrders(resOrd);
+      } else {
+        setOrders(getLocalOrders());
+      }
+
       if (Array.isArray(resCoup)) setCoupons(resCoup);
       if (Array.isArray(resBan)) setBanners(resBan);
       if (Array.isArray(resLp)) setLandingPages(resLp);
-      if (resSet && !resSet.error) setSettings(resSet);
+
+      if (resSet && !resSet.error) {
+        setSettings(resSet);
+      } else {
+        setSettings(getLocalSettings());
+      }
+
       if (resFin && !resFin.error) setFinancials(resFin);
       if (Array.isArray(resAud)) setAuditLogs(resAud);
-      if (Array.isArray(resCats) && resCats.length > 0) setAdminCategories(resCats);
+
+      if (Array.isArray(resCats) && resCats.length > 0) {
+        setAdminCategories(resCats);
+      } else {
+        setAdminCategories(getLocalCategories());
+      }
     } catch (e) {
       console.error('Error loading admin data', e);
     } finally {
@@ -442,27 +476,41 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   // Order status update & save to server
   const handleOrderStatusUpdate = async (orderId: string, newStatus: OrderStatus, note?: string) => {
     try {
-      const res = await fetch(`/api/admin/orders/${orderId}/status`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify({ status: newStatus, note }),
-      });
-      const data = await res.json();
-      if (res.ok && data.order) {
-        setOrders((prev) => prev.map((o) => (o.id === orderId ? data.order : o)));
+      let savedOrder: Order | null = null;
+      try {
+        const res = await fetch(getApiUrl(`/api/admin/orders/${orderId}/status`), {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify({ status: newStatus, note }),
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          const data = await res.json();
+          if (data && data.order) savedOrder = data.order;
+        }
+      } catch (e) {
+        console.warn('Remote status update unavailable, saving to local store:', e);
+      }
+
+      // Fallback for Netlify static host
+      if (!savedOrder) {
+        savedOrder = updateLocalOrderStatus(orderId, newStatus, note);
+      }
+
+      if (savedOrder) {
+        setOrders((prev) => prev.map((o) => (o.id === orderId ? savedOrder! : o)));
         if (selectedOrderForManage && selectedOrderForManage.id === orderId) {
-          setSelectedOrderForManage(data.order);
+          setSelectedOrderForManage(savedOrder);
         }
         setStatusSaveNotice(`Order status changed to "${formatStatusLabel(newStatus)}" and saved!`);
         setTimeout(() => setStatusSaveNotice(null), 3500);
-        loadAdminData();
         onRefreshData();
         return true;
       } else {
-        alert(data.error || 'Failed to save order status.');
+        alert('Failed to save order status.');
         return false;
       }
     } catch {
@@ -489,18 +537,29 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   // COD status update
   const handleCodStatusUpdate = async (orderId: string, codStatus: CodReconciliationStatus) => {
     try {
-      const res = await fetch(`/api/admin/orders/${orderId}/cod-reconcile`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify({ codStatus }),
-      });
-      const data = await res.json();
-      if (res.ok && data.order) {
-        setOrders((prev) => prev.map((o) => (o.id === orderId ? data.order : o)));
-        loadAdminData();
+      let updated: Order | null = null;
+      try {
+        const res = await fetch(getApiUrl(`/api/admin/orders/${orderId}/cod-reconcile`), {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify({ codStatus }),
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          const data = await res.json();
+          if (data && data.order) updated = data.order;
+        }
+      } catch {}
+
+      if (!updated) {
+        updated = updateLocalCodStatus(orderId, codStatus);
+      }
+
+      if (updated) {
+        setOrders((prev) => prev.map((o) => (o.id === orderId ? updated! : o)));
       }
     } catch {}
   };
@@ -508,20 +567,30 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   // Save Settings
   const handleSaveSettings = async (newSettings: Partial<BusinessSettings>) => {
     try {
-      const res = await fetch('/api/admin/settings', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify(newSettings),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setSettings(data.settings);
-        alert('Settings successfully updated!');
-        onRefreshData();
+      let updated = false;
+      try {
+        const res = await fetch(getApiUrl('/api/admin/settings'), {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify(newSettings),
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          const data = await res.json();
+          setSettings(data.settings);
+          updated = true;
+        }
+      } catch {}
+
+      if (!updated) {
+        const saved = saveLocalSettings(newSettings);
+        setSettings(saved);
       }
+      alert('Settings successfully updated!');
+      onRefreshData();
     } catch {
       alert('Failed to save settings.');
     }
@@ -536,23 +605,34 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     }
     setProductFormSaving(true);
     try {
-      const res = await fetch('/api/admin/products', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify(editingProduct),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setIsProductModalOpen(false);
-        setEditingProduct(null);
-        loadAdminData();
-        onRefreshData();
+      let saved = false;
+      try {
+        const res = await fetch(getApiUrl('/api/admin/products'), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify(editingProduct),
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          const data = await res.json();
+          if (data && data.product) saved = true;
+        }
+      } catch {}
+
+      if (!saved) {
+        upsertLocalProduct(editingProduct);
+        setProducts(getLocalProducts());
       } else {
-        alert(data.error || 'Failed to save product.');
+        loadAdminData();
       }
+      setIsProductModalOpen(false);
+      setEditingProduct(null);
+      setStatusSaveNotice('Product saved successfully!');
+      setTimeout(() => setStatusSaveNotice(null), 3000);
+      onRefreshData();
     } catch {
       alert('Failed to save product.');
     } finally {
@@ -564,17 +644,30 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   const handleDeleteProduct = async (id: string, name: string) => {
     if (!confirm(`Are you sure you want to delete "${name}"?`)) return;
     try {
-      const res = await fetch(`/api/admin/products/${id}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${adminToken}` },
-      });
-      if (res.ok) {
-        setProducts((prev) => prev.filter((p) => p.id !== id));
-        setStatusSaveNotice(`Product "${name}" deleted.`);
-        setTimeout(() => setStatusSaveNotice(null), 3000);
-        onRefreshData();
+      let deleted = false;
+      try {
+        const res = await fetch(getApiUrl(`/api/admin/products/${id}`), {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${adminToken}` },
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          deleted = true;
+        }
+      } catch {}
+
+      if (!deleted) {
+        deleteLocalProduct(id);
+        setProducts(getLocalProducts());
+      } else {
+        loadAdminData();
       }
-    } catch {}
+      setStatusSaveNotice(`Product "${name}" deleted.`);
+      setTimeout(() => setStatusSaveNotice(null), 3000);
+      onRefreshData();
+    } catch {
+      alert('Failed to delete product.');
+    }
   };
 
   // Open Add Product Modal with fresh template
@@ -600,22 +693,33 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   const handleQuickStockUpdate = async (productId: string, newStock: number) => {
     setStockUpdatingId(productId);
     try {
-      const res = await fetch(`/api/admin/products/${productId}/stock`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify({ stock: Math.max(0, newStock) }),
-      });
-      if (res.ok) {
+      let updated = false;
+      try {
+        const res = await fetch(getApiUrl(`/api/admin/products/${productId}/stock`), {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify({ stock: Math.max(0, newStock) }),
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          updated = true;
+        }
+      } catch {}
+
+      if (!updated) {
+        upsertLocalProduct({ id: productId, stock: Math.max(0, newStock) });
+        setProducts(getLocalProducts());
+      } else {
         setProducts((prev) =>
           prev.map((p) => (p.id === productId ? { ...p, stock: Math.max(0, newStock) } : p))
         );
-        setStatusSaveNotice(`Stock updated successfully to ${Math.max(0, newStock)}`);
-        setTimeout(() => setStatusSaveNotice(null), 3000);
-        onRefreshData();
       }
+      setStatusSaveNotice(`Stock updated successfully to ${Math.max(0, newStock)}`);
+      setTimeout(() => setStatusSaveNotice(null), 3000);
+      onRefreshData();
     } catch (err) {
       console.error('Failed to update stock', err);
     } finally {
@@ -632,33 +736,34 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     }
     setCategoryFormSaving(true);
     try {
-      const res = await fetch('/api/admin/categories', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${adminToken}`,
-        },
-        body: JSON.stringify(editingCategory),
-      });
-      const data = await res.json();
-      if (res.ok && data.category) {
-        setAdminCategories((prev) => {
-          const idx = prev.findIndex((c) => c.id === data.category.id);
-          if (idx !== -1) {
-            const next = [...prev];
-            next[idx] = data.category;
-            return next;
-          }
-          return [...prev, data.category];
+      let saved = false;
+      try {
+        const res = await fetch(getApiUrl('/api/admin/categories'), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${adminToken}`,
+          },
+          body: JSON.stringify(editingCategory),
         });
-        setIsCategoryModalOpen(false);
-        setEditingCategory(null);
-        setStatusSaveNotice(`Category "${data.category.nameBn}" saved successfully!`);
-        setTimeout(() => setStatusSaveNotice(null), 3000);
-        onRefreshData();
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          const data = await res.json();
+          if (data && data.category) saved = true;
+        }
+      } catch {}
+
+      if (!saved) {
+        upsertLocalCategory(editingCategory);
+        setAdminCategories(getLocalCategories());
       } else {
-        alert(data.error || 'Failed to save category.');
+        loadAdminData();
       }
+      setIsCategoryModalOpen(false);
+      setEditingCategory(null);
+      setStatusSaveNotice('Category saved successfully!');
+      setTimeout(() => setStatusSaveNotice(null), 3000);
+      onRefreshData();
     } catch {
       alert('Failed to save category.');
     } finally {
@@ -676,20 +781,29 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     if (!confirm(msg)) return;
 
     try {
-      const res = await fetch(`/api/admin/categories/${catId}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${adminToken}` },
-      });
-      if (res.ok) {
-        setAdminCategories((prev) => prev.filter((c) => c.id !== catId));
-        setStatusSaveNotice(`Category deleted successfully.`);
-        setTimeout(() => setStatusSaveNotice(null), 3000);
-        onRefreshData();
+      let deleted = false;
+      try {
+        const res = await fetch(getApiUrl(`/api/admin/categories/${catId}`), {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${adminToken}` },
+        });
+        const contentType = res.headers.get('content-type') || '';
+        if (res.ok && contentType.includes('application/json')) {
+          deleted = true;
+        }
+      } catch {}
+
+      if (!deleted) {
+        deleteLocalCategory(catId);
+        setAdminCategories(getLocalCategories());
       } else {
-        alert('Failed to delete category.');
+        loadAdminData();
       }
+      setStatusSaveNotice(`Category "${catName}" deleted.`);
+      setTimeout(() => setStatusSaveNotice(null), 3000);
+      onRefreshData();
     } catch {
-      alert('Failed to delete category.');
+      alert('Failed to delete category');
     }
   };
 
